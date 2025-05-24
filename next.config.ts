@@ -1,7 +1,18 @@
+import { join } from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    experimental: {
+        reactCompiler: true,
+        useCache: true,
+        serverActions: {
+            bodySizeLimit: "2mb",
+        },
+    },
+    sassOptions: {
+        includePaths: [join(__dirname, "components")],
+        prependData: `@use "@/assets/mixins" as *;`,
+    },
 };
 
 export default nextConfig;

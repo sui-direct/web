@@ -1,0 +1,105 @@
+#sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: calc(100dvh - var(--header-height));
+
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--gray);
+        height: 500px;
+        width: min(400px, 90vw);
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 2px;
+            left: 2px;
+            right: 0;
+            bottom: 0;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background-color: var(--dark);
+
+            @include poly;
+        }
+
+        .connection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 24px;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: min(600px, 90vw);
+
+        .sign-window {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 24px;
+            background-color: var(--dark);
+
+            .message {
+                padding: 12px;
+                font-size: 14px;
+                white-space: pre-wrap;
+                color: var(--lgray);
+                background-color: var(--dark-2);
+            }
+        }
+
+        .signature-window {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+            width: 100%;
+            background-color: var(--dark);
+            padding: 18px 12px;
+
+            > p:not(.signature) {
+                width: 100%;
+            }
+
+            p.signature {
+                width: 100%;
+                font-size: 12px;
+                line-height: 22px;
+                padding: 6px;
+                border-radius: 4px;
+                word-break: break-all;
+                background-color: #292929;
+                opacity: 0.6;
+                color: #fff;
+                font-weight: 500;
+            }
+
+            button {
+                color: white;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
