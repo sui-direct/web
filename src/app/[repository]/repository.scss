@@ -1,0 +1,7 @@
+#repository {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 12px;
+    height: calc(100dvh - var(--header-height));
+} 

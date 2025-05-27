@@ -1,0 +1,45 @@
+#nodes {
+    .status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        min-height: 18px;
+        border-radius: 50%;
+        animation: shrink 0.7s infinite cubic-bezier(.01,.73,.85,1);
+
+        &.online {
+            background: #1dbe1d94;
+
+            span {
+                background: rgb(0, 189, 0);
+            }
+        }
+
+        &.offline {
+            background: #be1d1d94;
+
+            span {
+                background: rgb(216, 1, 1);
+            }
+        }
+
+        span {
+            display: block;
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+        }
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}

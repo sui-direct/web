@@ -42,10 +42,22 @@ export default function Sign() {
                     <div className="connection">
                         <h3 className="w-full font-semibold text-gray-100">Wallet Connection</h3>
                         <ConnectModal
+                            walletFilter={wallet => wallet.name === "Slush"}
                             trigger={
                                 <Button variant="default" disabled={!!currentAccount}>
                                     <Image src="/icons/slush.svg" alt="Slush Logo" width={24} height={24} />
                                     Connect Slush Wallet
+                                </Button>
+                            }
+                            onOpenChange={isOpen => setModalOpen(isOpen)}
+                            open={modalOpen}
+                        />
+                        <ConnectModal
+                            walletFilter={wallet => wallet.name === "Phantom"}
+                            trigger={
+                                <Button variant="default" disabled={!!currentAccount} className="bg-[rgb(171,159,242)] hover:bg-[rgb(149,136,219)]">
+                                    <Image src="/icons/phantom.png" alt="Phantom Logo" width={24} height={24} />
+                                    Connect Phantom Wallet
                                 </Button>
                             }
                             onOpenChange={isOpen => setModalOpen(isOpen)}

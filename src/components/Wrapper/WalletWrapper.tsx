@@ -20,6 +20,7 @@ export default function WalletWrapper({ children }: { children: React.ReactNode 
                 <WalletProvider
                     slushWallet={{
                         name: "sui.direct",
+                        origin: "https://sui.direct",
                     }}
                 >
                     {children}
